@@ -12,3 +12,12 @@ The purpose of this application is to make it easier and cheeper for people to f
 
 * Ruby 2.7.2
 * Rails 6.1.4
+
+## Changelog
+
+### User Authentication
+- **Feature:** Visitors can create accounts and log in
+
+### User Avatar
+- **Feature:** User can upload an avatar picture
+- **System:** Email and password validations only run on `:create`. These params are not permitted on edit yet.
