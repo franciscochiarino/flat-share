@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = 'User created'
-      redirect_to root_path
+      redirect_to login_path
     else
       render 'new'
     end
