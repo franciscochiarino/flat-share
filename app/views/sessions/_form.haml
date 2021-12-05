@@ -2,10 +2,14 @@
   %div
     = f.label :email
     = f.email_field :email
+    - @user.errors.full_messages_for(:email).each do |message|
+      %p= message
 
   %div
     = f.label :password
     = f.password_field :password
+    - @user.errors.full_messages_for(:password).each do |message|
+      %p= message
 
   %div
     = f.submit 'Log in'

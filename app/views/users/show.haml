@@ -1,0 +1,6 @@
+%h1= "Welcome #{ @user.first_name && @user.first_name }"
+
+- if @user.avatar&.attached?
+  = image_tag @user.avatar
+
+= link_to 'Settings', edit_user_path(@user.id)

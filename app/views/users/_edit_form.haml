@@ -1,0 +1,19 @@
+= form_with model: @user do |f|
+  %div
+    = f.label :first_name
+    = f.text_field :first_name
+    - @user.errors.full_messages_for(:first_name).each do |message|
+      %p= message
+
+  %div
+    = f.label :last_name
+    = f.text_field :last_name
+    - @user.errors.full_messages_for(:last_name).each do |message|
+      %p= message
+
+  %div
+    = f.label :avatar
+    = f.file_field :avatar
+
+  %div
+    = f.submit
