@@ -21,3 +21,6 @@ The purpose of this application is to make it easier and cheeper for people to f
 ### User Avatar
 - **Feature:** User can upload an avatar picture
 - **System:** Email and password validations only run on `:create`. These params are not permitted on edit yet.
+
+### Flat Model
+- **System:** Create flats table in the database
