@@ -1,0 +1,8 @@
+%h1 Flats
+
+- @flats.each do |flat|
+  = link_to flat.headline, flat_path(flat)
+  %div
+    %p= flat.description
+
+= link_to 'New Flat', new_flat_path
