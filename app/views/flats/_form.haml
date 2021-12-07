@@ -1,0 +1,120 @@
+= form_with model: @flat, local: true do |f|
+  %div
+    = f.label :kind
+    = f.text_field :kind # TODO: Must be option
+    - @flat.errors.full_messages_for(:kind).each do |message|
+      %p= message
+
+  %div
+    = f.label :space
+    = f.text_field :space # TODO: Must be option
+    - @flat.errors.full_messages_for(:space).each do |message|
+      %p= message
+
+  %div
+    = f.label :address
+    = f.text_field :address
+    - @flat.errors.full_messages_for(:address).each do |message|
+      %p= message
+
+  %div
+    = f.label :address_description
+    = f.text_field :address_description
+    - @flat.errors.full_messages_for(:address_description).each do |message|
+      %p= message
+
+  %div
+    = f.label :city
+    = f.text_field :city
+    - @flat.errors.full_messages_for(:city).each do |message|
+      %p= message
+
+  %div
+    = f.label :zip
+    = f.number_field :zip
+    - @flat.errors.full_messages_for(:zip).each do |message|
+      %p= message
+
+  %div
+    = f.label :country
+    = f.text_field :country
+    - @flat.errors.full_messages_for(:country).each do |message|
+      %p= message
+
+  %div
+    = f.label :guests
+    = f.number_field :guests
+    - @flat.errors.full_messages_for(:guests).each do |message|
+      %p= message
+
+  %div
+    = f.label :beds
+    = f.number_field :beds
+    - @flat.errors.full_messages_for(:beds).each do |message|
+      %p= message
+    
+  %div
+    = f.label :bedrooms
+    = f.number_field :bedrooms
+    - @flat.errors.full_messages_for(:bedrooms).each do |message|
+      %p= message
+    
+  %div
+    = f.label :bathrooms
+    = f.number_field :bathrooms
+    - @flat.errors.full_messages_for(:bathrooms).each do |message|
+      %p= message
+    
+  %div
+    = f.label :standouts
+    = f.label :pool
+    = check_box_tag 'standouts[]', 'pool', false, id: 'pool'
+
+    = f.label :hot_tub
+    = check_box_tag 'standouts[]', 'hot_tub', false, id: 'hot_tub'
+
+    = f.label :patio
+    = check_box_tag 'standouts[]', 'patio', false, id: 'patio'
+
+    = f.label :BBQ_grill
+    = check_box_tag 'standouts[]', 'BBQ_grill', false, id: 'BBQ_grill'
+
+    = f.label :fire_pit
+    = check_box_tag 'standouts[]', 'fire_pit', false, id: 'fire_pit'
+
+    - @flat.errors.full_messages_for(:standouts).each do |message|
+      %p= message
+    
+  %div
+    = f.label :favorites
+    = f.text_field :favorites # TODO: Must be option with default nil value
+    - @flat.errors.full_messages_for(:favorites).each do |message|
+      %p= message
+    
+  %div
+    = f.label :safety
+    = f.text_field :safety # TODO: Must be option with default nil value
+    - @flat.errors.full_messages_for(:safety).each do |message|
+      %p= message
+    
+  %div
+    = f.label :headline
+    = f.text_field :headline
+    - @flat.errors.full_messages_for(:headline).each do |message|
+      %p= message
+    
+  %div
+    = f.label :highlights
+    = f.text_field :highlights # TODO: Must be option with default nil value
+    - @flat.errors.full_messages_for(:highlights).each do |message|
+      %p= message
+    
+  %div
+    = f.label :description
+    = f.text_area :description
+    - @flat.errors.full_messages_for(:description).each do |message|
+      %p= message
+
+  %div
+    = f.submit
+    
