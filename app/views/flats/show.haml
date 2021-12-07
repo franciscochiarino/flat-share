@@ -1,0 +1,9 @@
+%h1= @flat.headline
+
+%table
+  %tr
+    - @flat.attributes.keys.each do |key|
+      %th= key
+  %tr
+    - @flat.attributes.values.each do |value|
+      %td= value
