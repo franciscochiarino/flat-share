@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  space: MyString
+  address: MyString
+  address_description: MyString
+  city: MyString
+  zip: MyString
+  country: MyString
+  guests: 1
+  beds: 1
+  bedrooms: 1
+  bathrooms: 1
+  standouts: MyString
+  favorites: MyString
+  safety: MyString
+  headline: MyString
+  highlights: MyString
+  description: MyText
+
+two:
+  kind: MyString
+  space: MyString
+  address: MyString
+  address_description: MyString
+  city: MyString
+  zip: MyString
+  country: MyString
+  guests: 1
+  beds: 1
+  bedrooms: 1
+  bathrooms: 1
+  standouts: MyString
+  favorites: MyString
+  safety: MyString
+  headline: MyString
+  highlights: MyString
+  description: MyText
