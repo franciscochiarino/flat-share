@@ -1,13 +1,13 @@
 = form_with model: @flat, local: true do |f|
   %div
     = f.label :kind
-    = f.text_field :kind # TODO: Must be option
+    = f.select :kind, select_options(Flat::KIND), { include_blank: true }
     - @flat.errors.full_messages_for(:kind).each do |message|
       %p= message
 
   %div
     = f.label :space
-    = f.text_field :space # TODO: Must be option
+    = f.select :space, select_options(Flat::SPACE), { include_blank: true }
     - @flat.errors.full_messages_for(:space).each do |message|
       %p= message
 
@@ -87,13 +87,13 @@
     
   %div
     = f.label :favorites
-    = f.text_field :favorites # TODO: Must be option with default nil value
+    = f.select :favorites, select_options(Flat::FAVORITES), { include_blank: :select }
     - @flat.errors.full_messages_for(:favorites).each do |message|
       %p= message
     
   %div
     = f.label :safety
-    = f.text_field :safety # TODO: Must be option with default nil value
+    = f.select :safety, select_options(Flat::SAFETY), { include_blank: true }
     - @flat.errors.full_messages_for(:safety).each do |message|
       %p= message
     
@@ -105,7 +105,7 @@
     
   %div
     = f.label :highlights
-    = f.text_field :highlights # TODO: Must be option with default nil value
+    = f.select :highlights, select_options(Flat::HIGHLIGHTS), { include_blank: true }
     - @flat.errors.full_messages_for(:highlights).each do |message|
       %p= message
     

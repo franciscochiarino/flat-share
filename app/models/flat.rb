@@ -13,19 +13,20 @@ class Flat < ApplicationRecord
 
   validates_inclusion_of :space,      in: SPACE
   validates_inclusion_of :kind,       in: KIND
-  validates_inclusion_of :safety,     in: SAFETY,     allow_nil: true
-  validates_inclusion_of :highlights, in: HIGHLIGHTS, allow_nil: true
-  validates_inclusion_of :favorites,  in: FAVORITES,  allow_nil: true
-  validates_inclusion_of :standouts,  in: STANDOUTS,  allow_nil: true
+  validates_inclusion_of :safety,     in: SAFETY,     allow_blank: true
+  validates_inclusion_of :highlights, in: HIGHLIGHTS, allow_blank: true
+  validates_inclusion_of :favorites,  in: FAVORITES,  allow_blank: true
+  validates_inclusion_of :standouts,  in: STANDOUTS,  allow_blank: true
 
-  validates_length_of     :description,         within: 50..400
-  validates_length_of     :address,             within: 1..100
-  validates_presence_of   :city    # TODO: Must have a limit
-  validates_presence_of   :zip # TODO: Must have a limit
-  validates_presence_of   :country  # TODO: Must have a limit
-  validates_presence_of   :guests  # TODO: Must have a limit
-  validates_presence_of   :beds # TODO: Must have a limit
-  validates_presence_of   :bedrooms # TODO: Must have a limit
-  validates_presence_of   :bathrooms # TODO: Must have a limit
-  validates_uniqueness_of :headline # TODO: Must be option
+  validates_length_of     :description, within: 50..400
+  validates_length_of     :address,     within: 1..255
+  validates_presence_of   :city,        within: 1..20
+  validates_presence_of   :zip,         within: 1..7
+  validates_format_of     :zip,         with: /\A[A-Za-z0-9\- ]+\Z/
+  validates_presence_of   :country,     within: 0..30
+  validates               :guests,      numericality: { only_integer: true }
+  validates               :beds,        numericality: { only_integer: true }
+  validates               :bedrooms,    numericality: { only_integer: true }
+  validates               :bathrooms,   numericality: { only_integer: true }
+  validates_uniqueness_of :headline,    allow_blank: false     
 end
